@@ -5,7 +5,7 @@
     <div class="row">
         <div class="col-8 offset-2">
 
-<form method="post" class="needs-validation" novalidate action="/listings">
+<form method="post" class="needs-validation" novalidate action="/listings" enctype="multipart/form-data">
     <div class="mb-3">
         <label for="title" class="form-label">Title:</label>
         <input type="text" id="title" name="listing[title]" class="form-control" required>
@@ -18,11 +18,34 @@
         <div class="invalid-feedback">Enter a valid description</div>
     </div>
 
-    <div class="mb-3">
+    <!-- <div class="mb-3">
         <label for="image" class="form-label">Upload image:</label>
         <input type="text" id="image" name="listing[image]" placeholder="Enter image URL" class="form-control">
         <div class="invalid-feedback">Enter a valid URL</div>
+    </div> -->
+
+    <div class="mb-3">
+        <label for="image" class="form-label">Upload image:</label>
+        <input type="file" id="image" name="listing[image]"  class="form-control" required>
+        <div class="invalid-feedback">Enter a valid image</div>
+        
     </div>
+    <!-- <div class="mb-3">
+        <label for="category" class="form-label">Category:</label>
+        <select id="category" name="listing[category]" class="form-control" >
+            <option value="" selected disabled>-- Select Category --</option>
+          <option value="trending">Trending</option>
+          <option value="iconic-city">Iconic City</option>
+          <option value="mountains">Mountains</option>
+          <option value="castles">Castles</option>
+          <option value="farms">Farms</option>
+          <option value="arctic">Arctic</option>
+          <option value="camping">Camping</option>
+          <option value="domes">Domes</option>
+          <option value="boats">Boats</option>
+        </select>
+      </div> -->
+      
 
      <div class="row">
         <div class="mb-3 col-md-4">

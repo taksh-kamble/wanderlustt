@@ -5,16 +5,15 @@ const Review=require("./review.js");
 const listingSchema=new Schema({
   title:{
     type:String,
-    require:true
+    required:true
   },
   description:{
     type:String,
-    require:true
+    required:true
   },
   image:{
-    type:String,
-    default:"https://media.istockphoto.com/id/2169998845/photo/scenic-view-of-sea-against-sky-during-sunset.jpg?s=2048x2048&w=is&k=20&c=UG5HSWIcUKvRoGBuY8YnCW3yf8V51Q14MexEwkDUOOs=",
-    set:(v)=>v === ""?"https://media.istockphoto.com/id/2169998845/photo/scenic-view-of-sea-against-sky-during-sunset.webp?a=1&b=1&s=612x612&w=0&k=20&c=YdixnmsimLTKeA6kvagQah3O6IGMIEoRfqxnF6q0OcY=":v
+    url:String,
+    filename:String
   },
   price:Number,
   location:String,
@@ -24,7 +23,37 @@ const listingSchema=new Schema({
       type:Schema.Types.ObjectId,
       ref:"Review",
     }
-  ]
+  ],
+  owner:{
+    type:Schema.Types.ObjectId,
+    ref:"User",
+  },
+  geometry: {
+    type: {
+      type: String, // Don't do `{ location: { type: String } }`
+      enum: ['Point'], // 'location.type' must be 'Point'
+      required: true
+    },
+    coordinates: {
+      type: [Number],
+      required: true
+    }
+  },
+  category: {
+    type: String,
+    enum: [
+      "trending",
+      "iconic-city",
+      "mountains",
+      "castles",
+      "farms",
+      "arctic",
+      "camping",
+      "domes",
+      "boats"
+    ],
+    default: "trending"
+  }
 
 });
 

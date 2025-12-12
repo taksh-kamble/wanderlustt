@@ -88,3 +88,68 @@ body{
     color:White !important;
    
 }
+#map {
+    height: 300px;
+    width: 80% !important;
+}
+.filters{
+    display: flex;
+    flex-wrap: wrap;
+}
+.filter{
+    text-align: center;
+    margin-right: 2rem;
+    opacity: 0.7;
+    font-size: 0.8rem;
+}
+.filter:hover{
+    opacity: 1;
+   cursor: pointer;
+}
+.span{
+    display: none;
+}
+.switch-box {
+    border: 1.5px solid #d4d4d4;
+    background: #ffffff;
+    padding: 0.6rem 1rem;
+    border-radius: 1.5rem;
+    height: auto;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    transition: all 0.25s ease;
+    box-shadow: 0 2px 6px rgba(0,0,0,0.08);
+    cursor: pointer;
+    margin-bottom: 10px;
+  }
+  
+  .switch-box:hover {
+    border-color: #a8a8a8;
+    box-shadow: 0 3px 10px rgba(0,0,0,0.12);
+  }
+  
+  .switch-box .form-check-input {
+    cursor: pointer;
+  }
+  
+  .switch-box .form-check-label {
+    font-weight: 500;
+    cursor: pointer;
+  }
+  .searchBtn{
+    display: flex;
+    color: white;
+    background-color: red;
+    width:100px;
+    height:35px;
+    border-radius: 5px;
+    align-items: center;
+    
+    justify-content: space-around;
+  }
+  .searchBtn p{
+    margin-top: 16px;
+  }
+  
+  
