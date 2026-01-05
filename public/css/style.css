@@ -137,6 +137,28 @@ body{
     font-weight: 500;
     cursor: pointer;
   }
+  /* Search Bar Responsiveness */
+
+  /* Prevent search bar from growing too big */
+.search-bar {
+    max-width: 450px;
+  }
+  
+  /* Make search bar shrink on medium screens */
+  @media (max-width: 992px) {
+    .search-bar {
+      max-width: 300px;
+    }
+  }
+  
+  /* Full width on mobile */
+  @media (max-width: 768px) {
+    .search-bar {
+      width: 100% !important;
+      margin-top: 10px;
+    }
+  }
+  
   .searchBtn{
     display: flex;
     color: white;
@@ -151,5 +173,24 @@ body{
   .searchBtn p{
     margin-top: 16px;
   }
+
+  .navbar .form-control {
+    border-radius: 20px;
+  }
+  
+  .navbar .btn {
+    border-radius: 20px;
+  }
+  @media (max-width: 768px) {
+    .navbar-collapse {
+      background: #fff;
+      padding: 1rem;
+      border-radius: 12px;
+      box-shadow: 0 10px 25px rgba(0,0,0,0.08);
+    }
+  }
+  
+  
+
   
   

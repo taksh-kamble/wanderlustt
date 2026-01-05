@@ -1,50 +1,87 @@
 <nav class="navbar navbar-expand-md bg-body-light border-bottom sticky-top">
   <div class="container-fluid">
-    <a class="navbar-brand" href="/listings">
-      <i class="fa-regular fa-compass"></i>
+
+    <!-- BRAND -->
+    <a class="navbar-brand d-flex align-items-center" href="/listings">
+      <i class="fa-regular fa-compass fs-3"></i>
     </a>
 
-    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup" aria-label="Toggle navigation">
+    <!-- TOGGLER -->
+    <button
+      class="navbar-toggler"
+      type="button"
+      data-bs-toggle="collapse"
+      data-bs-target="#navbarNavAltMarkup"
+      aria-controls="navbarNavAltMarkup"
+      aria-expanded="false"
+      aria-label="Toggle navigation"
+    >
       <span class="navbar-toggler-icon"></span>
     </button>
 
+    <!-- COLLAPSE -->
     <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
-      <div class="navbar-nav">
-        <a class="nav-link" href="/listings">Explore</a>
-      </div>
 
-      <!-- 🔍 SEARCH BAR -->
-      <div class="mx-auto">
-        <form action="/listings/search" method="GET" class="search-bar d-flex align-items-center" role="search">
-          <input
-            class="form-control search-input"
-            type="search"
-            name="q"
-            placeholder="Search listings..."
-            required
-          />
-          <button class="btn search-btn" type="submit">
-            <div class="searchBtn">
-              <i class="fa-solid fa-magnifying-glass"></i>
-              <p>Search</p>
-            </div>
-          </button>
-        </form>
-      </div>
-      <!-- END SEARCH -->
+      <!-- LEFT -->
+      <ul class="navbar-nav me-md-3">
+        <li class="nav-item">
+          <a class="nav-link" href="/listings">Explore</a>
+        </li>
+      </ul>
 
-      <div class="navbar-nav ms-auto">
-        <a class="nav-link" href="/listings/new">Add new listing</a>
+      <!-- SEARCH -->
+      <form
+        action="/listings/search"
+        method="GET"
+        class="d-flex mx-md-auto my-2 my-md-0"
+        role="search"
+        style="max-width: 420px; width: 100%;"
+      >
+        <input
+          class="form-control me-2"
+          type="search"
+          name="q"
+          placeholder="Search listings..."
+          required
+        />
+        <button class="btn btn-outline-dark" type="submit">
+          <i class="fa-solid fa-magnifying-glass"></i>
+        </button>
+      </form>
 
+      <ul class="navbar-nav ms-md-auto mt-3 mt-md-0 text-center text-md-start">
+
+        <li class="nav-item">
+          <a class="nav-link" href="/listings/new">Add new listing</a>
+        </li>
+      
+        <hr class="d-md-none my-2" />
         <% if (!currUser) { %>
-          <a class="nav-link" href="/signup"><b>Sign Up</b></a>
-          <a class="nav-link" href="/login"><b>Login</b></a>
+          <li class="nav-item d-md-none my-1">
+            <a class="btn btn-outline-dark w-100" href="/signup">
+              Sign Up
+            </a>
+          </li>
+        
+          <li class="nav-item d-md-none my-1">
+            <a class="btn btn-dark w-100" href="/login">
+              Login
+            </a>
+          </li>
+        
+          <!-- Desktop -->
+          <li class="nav-item d-none d-md-block">
+            <a class="nav-link fw-bold" href="/signup">Sign Up</a>
+          </li>
+          <li class="nav-item d-none d-md-block">
+            <a class="nav-link fw-bold" href="/login">Login</a>
+          </li>
         <% } %>
+        
+      
+      </ul>
+      
 
-        <% if (currUser) { %>
-          <a class="nav-link" href="/logout"><b>Logout</b></a>
-        <% } %>
-      </div>
     </div>
   </div>
 </nav>
